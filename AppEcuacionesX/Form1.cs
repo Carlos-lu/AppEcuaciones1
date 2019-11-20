@@ -19,19 +19,51 @@ namespace AppEcuacionesX
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double a, b, c, r1,r2 ;
+            double a, b, c, x1,x2 ;
             a = Double.Parse(this.txtA.Text);
             b = Double.Parse(this.txtB.Text);
             c = Double.Parse(this.txtC.Text);
+            string msg1 = "", msg2 = "";
             //LLAMA LA FUNCION QUE CALCULA X1
-            r1 = AppEcuaciones.Ecuaciones.Ecupositiva(a, b, c);
+            x1 = AppEcuaciones.ecuacion1.x1(a, b, c, out msg1);
             //LLAMA LA FUNCION QUE CALCULA X2
-            r2 = AppEcuaciones.Ecuaciones.Ecunegativa(a, b, c);
+            x2 = AppEcuaciones.ecuacion1.x2(a, b, c, out msg2);
+            if(msg1.Length == 0)
+            {
+                this.txtX1.Text = x1.ToString("0.00");
+            }
+            else
+            {
+                this.txtX1.Text = msg1;
+            }
 
-            this.txtX1.Text= r1.ToString();
-            this.txtX2.Text = r2.ToString();
+            if(msg2.Length == 0)
+            {
+                this.txtX2.Text = x2.ToString("0.00");
+            }
+            else
+            {
+                this.txtX2.Text = msg2;
+            }
+            this.txtX1.Text= x1.ToString();
+            this.txtX2.Text = x2.ToString();
 
 
+        }
+
+        private void btnSALIR_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNUEVO_Click(object sender, EventArgs e)
+        {
+            this.txtA.Text = "";
+            this.txtB.Text = "";
+            this.txtC.Text = "";
+            this.txtX1.Text = "";
+            this.txtX2.Text = "";
+            this.txtA.Focus();
         }
     }
 }

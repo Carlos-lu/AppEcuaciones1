@@ -137,6 +137,7 @@
             this.btnNUEVO.TabIndex = 10;
             this.btnNUEVO.Text = "NUEVO";
             this.btnNUEVO.UseVisualStyleBackColor = true;
+            this.btnNUEVO.Click += new System.EventHandler(this.btnNUEVO_Click);
             // 
             // btnSALIR
             // 
@@ -146,6 +147,7 @@
             this.btnSALIR.TabIndex = 11;
             this.btnSALIR.Text = "SALIR";
             this.btnSALIR.UseVisualStyleBackColor = true;
+            this.btnSALIR.Click += new System.EventHandler(this.btnSALIR_Click);
             // 
             // label6
             // 
