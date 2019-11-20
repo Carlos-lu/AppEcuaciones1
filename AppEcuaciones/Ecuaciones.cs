@@ -8,12 +8,30 @@ namespace AppEcuaciones
 {
     public static class Ecuaciones
     {
-        public static double Ecupositiva(double a, double b, double c)
+        /// <summary>
+        /// Calcula la ecuacion por la parte positiva
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="C"></param>
+        /// <returns></returns>
+        public static double Ecupositiva(double A, double B, double C)
         {
-            double resul = ((-b + Math.Sqrt(b * b - 4 * a * c)) / (2 * a));
+            double resul = ((-B + Math.Sqrt(B * B - 4 * A * C)) / (2 * A));
             return resul;
         }
-
+        /// <summary>
+        /// Calcula la ecuacion por la parte negativa
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="C"></param>
+        /// <returns></returns>
+        public static double Ecunegativa(double A, double B, double C)
+        {
+            double resul = ((-B - Math.Sqrt(B * B - 4 * A * C)) / (2 * A));
+            return resul;
+        }
 
     }
 }
